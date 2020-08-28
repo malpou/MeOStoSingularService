@@ -30,7 +30,8 @@ classes.forEach((currentClass, classIndex) => {
 fetch("http://localhost:2009/meos?difference=zero")
   .then((res) => res.text())
   .then((str) => JSON.parse(parser.toJson(str)))
-  .then((json) => (nextDiff = json.MOPComplete.nextdifference));
+  .then((json) => (nextDiff = json.MOPComplete.nextdifference))
+  .catch(() => console.log("Connection error! Restart script ASAP!"));
 
 setInterval(() => {
   fetch(`http://localhost:2009/meos?difference=${nextDiff}`)
@@ -60,5 +61,6 @@ setInterval(() => {
           classUpdate.request();
         });
       });
-    });
+    })
+    .catch(() => console.log("Connection error! Restart script ASAP!"));
 }, 1000);
