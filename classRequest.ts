@@ -67,7 +67,7 @@ export class ClassRequest {
           );
         }).auth(process.env.MAIL, process.env.PW);
       })
-      .catch(() => console.log("Connection error! Restart script ASAP!"));
+      .catch((e) => console.log("Connection error! Restart script ASAP! (classRequest)\t" + e));
   }
 
   private bodytemplate(): BodyTemplate {

@@ -6,13 +6,27 @@ dotenv.config();
 
 const classes: number[] = [1, 2];
 const nodeIds: number[][] = [
-  [2538, 2549, 2550, 2551, 2542, 2545],
-  [2537, 2547, 2548, 2541, 2546, 2544],
+  [2538, 2549, 2550, 2551, 2542, 2545], // H21
+  [2537, 2547, 2548, 2541, 2546, 2544], // D21
 ];
+
+// Testing 
 const controls: any[][] = [
   ["finish", 50, 150, 100],
   ["finish", 50, 150, 100],
 ];
+
+//DM Mellem
+/*const controls: any[][] = [
+  ["finish", 197, 158, 143, 145, 174],
+  ["finish", 197, 158, 143, 160, 174],
+];*/
+
+//DM Sprint
+/*const controls: any[][] = [
+  ["finish", 76, 48, 64],
+  ["finish", 76, 48, 64],
+];*/
 
 let nextDiff: string;
 
@@ -31,7 +45,7 @@ fetch("http://localhost:2009/meos?difference=zero")
   .then((res) => res.text())
   .then((str) => JSON.parse(parser.toJson(str)))
   .then((json) => (nextDiff = json.MOPComplete.nextdifference))
-  .catch(() => console.log("Connection error! Restart script ASAP!"));
+  .catch((e) => console.log("Connection error! Restart script ASAP! (init diff)\t" + e));
 
 setInterval(() => {
   fetch(`http://localhost:2009/meos?difference=${nextDiff}`)
@@ -62,5 +76,5 @@ setInterval(() => {
         });
       });
     })
-    .catch(() => console.log("Connection error! Restart script ASAP!"));
+    .catch((e) => console.log("Connection error! Restart script ASAP! (loop)\t" + e));
 }, 1000);
