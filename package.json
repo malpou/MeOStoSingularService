@@ -1,0 +1,32 @@
+{
+  "name": "resultoverlayservice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "node out/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/P0lle/ResultOverlayService.git"
+  },
+  "author": "Malthe Poulsen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/P0lle/ResultOverlayService/issues"
+  },
+  "homepage": "https://github.com/P0lle/ResultOverlayService#readme",
+  "dependencies": {
+    "@types/node": "^14.6.0",
+    "@types/node-fetch": "^2.5.7",
+    "@types/request": "^2.48.5",
+    "@types/xml2json": "^0.11.3",
+    "dotenv": "^8.2.0",
+    "node-fetch": "^2.6.0",
+    "request": "^2.88.2",
+    "xml2json": "^0.12.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.2"
+  }
+}
