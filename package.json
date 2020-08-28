@@ -1,8 +1,8 @@
 {
   "name": "resultoverlayservice",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "",
-  "main": "out/index.js",
+  "main": "index.js",
   "scripts": {
     "serve": "node out/index.js"
   },
